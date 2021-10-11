@@ -1,6 +1,7 @@
 console.log('app started');
 
 const gameField = document.getElementById('game');
+let randomNumber = null;
 
 for (let i = 1; i < 17; i += 1) {
   const cell = document.createElement('div');
@@ -16,8 +17,19 @@ function getRandomPicture(field) {
       elem.classList.remove('picture');
     }
   });
-  const random = field[Math.floor(Math.random() * field.length)];
-  return random.classList.add('picture');
+
+  let random = Math.floor(Math.random() * field.length);
+
+  if (randomNumber === random) {
+    while (randomNumber === random) {
+      random = Math.floor(Math.random() * field.length);
+    }
+    randomNumber = random;
+    return field[randomNumber].classList.add('picture');
+  }
+
+  randomNumber = random;
+  return field[randomNumber].classList.add('picture');
 }
 
 getRandomPicture(completeField);
