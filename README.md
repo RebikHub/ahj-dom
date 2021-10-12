@@ -1,3 +1,3 @@
 # ahj-dom
 
-(https://rebikhub.github.io/ahj-dom/)
+[Link](https://rebikhub.github.io/ahj-dom/)
